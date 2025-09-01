@@ -25,11 +25,9 @@ const InfoItemComponent: React.FC<InfoProps> = ({ info }) => {
     <InfoContainer>
       {info.map((item, index) => (
         <InfoItem key={index} top={index}>
-          {index}
           {item}
         </InfoItem>
       ))}
-      ;
     </InfoContainer>
   );
 };

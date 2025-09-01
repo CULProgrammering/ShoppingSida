@@ -3,6 +3,7 @@ import Stars from "./Stars.tsx";
 import Circles from "./ColorCircles.tsx";
 import InfoItem from "./InfoItem.tsx";
 import styled from "styled-components";
+import { ShoppingCart, ShoppingCartIcon } from "lucide-react";
 
 interface ShoppingCardProps {
   imageLänk: string;
@@ -34,6 +35,25 @@ const ModelMemoryDiv = styled.div`
   display: inline-block;
 `;
 
+const PrisDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+`;
+
+const PrisButton = styled.button`
+  width: 100%
+  height: auto;
+  display: flex;
+  background: beige;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+`;
+
 const ModelMemoryH3 = styled.h3``;
 
 const ShoppingCard: React.FC<ShoppingCardProps> = ({
@@ -57,7 +77,12 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({
       <Stars rating={stars} />
       <Circles colors={colors} />
       <InfoItem info={[info1, info2, info3]} />
-      <p>Pris: ${price} kr</p>
+      <PrisDiv>
+        <p>Pris: ${price} kr</p>
+        <PrisButton>
+          <ShoppingCart size={24} color="black"></ShoppingCart>
+        </PrisButton>
+      </PrisDiv>
     </MainDiv>
   );
 };
